@@ -8,34 +8,33 @@ from player import Player
 
 def main():
     pygame.init()
-    print("Starting Asteroids!")
-    print(f"Screen width: {SCREEN_WIDTH}")
-    print(f"Screen height: {SCREEN_HEIGHT}")
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     clock = pygame.time.Clock() # Clock Object
     dt = 0 # Delta Time Variable Initialized
+    player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
+    print("Starting Asteroids!")
+    print(f"Screen width: {SCREEN_WIDTH}")
+    print(f"Screen height: {SCREEN_HEIGHT}")
 
     # Instantiate Player
-    player_x = SCREEN_WIDTH / 2
-    player_y = SCREEN_HEIGHT / 2
-    player = Player(player_x, player_y)
+    # player_x = SCREEN_WIDTH / 2
+    # player_y = SCREEN_HEIGHT / 2
 
     running = True
     while running:
-        for event in pygame.event.get():
+        events = pygame.event.get()
+        for event in events:
             if event.type == pygame.QUIT:
                 running = False
                 return
 
-        screen.fill((0, 0, 0)) # (Red, Green, Blue)
-
         player.update(dt)
-        
-        player.draw(screen)
 
+        screen.fill("black") # (Red, Green, Blue)
+        player.draw(screen)
         pygame.display.flip()
     
-    dt = clock.tick(60) / 1000 # Tick at the end of each iteration, get delta time and update dt
+        dt = clock.tick(60) / 1000 # Tick at the end of each iteration, get delta time and update dt
 
 if __name__ == "__main__":
     main()
