@@ -1,3 +1,4 @@
+# Run this at the root, before working on this repo = source venv/bin/activate
 # This allows us to use code from
 # the open-source pygame library
 # throughout this file
