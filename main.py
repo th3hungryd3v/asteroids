@@ -4,6 +4,7 @@
 # throughout this file
 import pygame
 from constants import *
+from player import Player
 
 def main():
     pygame.init()
@@ -13,6 +14,11 @@ def main():
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     clock = pygame.time.Clock() # Clock Object
     dt = 0 # Delta Time Variable Initialized
+
+    # Instantiate Player
+    player_x = SCREEN_WIDTH / 2
+    player_y = SCREEN_WIDTH / 2
+    player = Player(player_x, player_y)
 
     running = True
     while running:
