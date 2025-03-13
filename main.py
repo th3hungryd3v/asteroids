@@ -28,6 +28,8 @@ def main():
                 return
 
         screen.fill((0, 0, 0)) # (Red, Green, Blue)
+
+        player.update(dt)
         
         player.draw(screen)
 
