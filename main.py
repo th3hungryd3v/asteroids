@@ -17,7 +17,7 @@ def main():
 
     # Instantiate Player
     player_x = SCREEN_WIDTH / 2
-    player_y = SCREEN_WIDTH / 2
+    player_y = SCREEN_HEIGHT / 2
     player = Player(player_x, player_y)
 
     running = True
@@ -28,8 +28,10 @@ def main():
                 return
 
         screen.fill((0, 0, 0)) # (Red, Green, Blue)
+        
+        player.draw(screen)
 
-    pygame.display.flip()
+        pygame.display.flip()
     
     dt = clock.tick(60) / 1000 # Tick at the end of each iteration, get delta time and update dt
 
