@@ -26,10 +26,10 @@ class Player(CircleShape):
 
     def shoot(self):
         if self.shot_timer > 0: # shoot if the timer is greater than zero
-        shot = Shot(self.position.x, self.position.y)
-        forward = pygame.Vector2(0, 1).rotate(self.rotation)
-        shot.velocity += forward * PLAYER_SHOOT_SPEED
-        self.shot_timer = PLAYER_SHOOT_COOLDOWN # reset the timer back to 0.03
+            shot = Shot(self.position.x, self.position.y)
+            forward = pygame.Vector2(0, 1).rotate(self.rotation)
+            shot.velocity += forward * PLAYER_SHOOT_SPEED
+            self.shot_timer = PLAYER_SHOOT_COOLDOWN # reset the timer back to 0.03
 
 
     def update(self, dt):
