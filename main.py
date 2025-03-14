@@ -3,6 +3,7 @@
 # the open-source pygame library
 # throughout this file
 import pygame
+import sys
 from constants import *
 from player import Player
 from asteroid import Asteroid
@@ -47,6 +48,11 @@ def main():
         pygame.display.flip()
     
         dt = clock.tick(60) / 1000 # Tick at the end of each iteration, get delta time and update dt
+
+        for asteroid in asteroids:
+            if player.collides_with(asteroid):
+                print("Game Over!")
+                sys.exit() # Exit Asteroids
 
 if __name__ == "__main__":
     main()
