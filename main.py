@@ -18,7 +18,7 @@ def main():
     # Groups
     updatable = pygame.sprite.Group()
     drawable = pygame.sprite.Group()
-    rockables = pygame.sprite.Group()
+    asteroids = pygame.sprite.Group()
 
     # Player containers
     Player.containers = (updatable, drawable)
