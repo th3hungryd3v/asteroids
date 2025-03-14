@@ -53,7 +53,6 @@ def main():
             if player.collides_with(asteroid):
                 print("Game Over!")
                 sys.exit() # Exit Asteroids
-                
 
 if __name__ == "__main__":
     main()
