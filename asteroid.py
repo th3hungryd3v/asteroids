@@ -1,4 +1,4 @@
-import circleshapes from CircleShape
+from circleshapes import CircleShape
 
 class Asteroid(CircleShape):
     def __init__(self, x, y, radius):
